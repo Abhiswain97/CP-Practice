@@ -1,0 +1,88 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run in conda tf",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "conda activate tf",
+        "&&",
+        "copy",
+        "\"${file}\"",
+        "\"${workspaceFolder}\\test.py\"",
+        "&&",
+        "python",
+        "\"${workspaceFolder}\\test.py\"",
+        "<",
+        "\"${workspaceFolder}\\input.txt\"",
+        ">",
+        "\"${workspaceFolder}\\output.txt\"",
+        "&&",
+        "del",
+        "\"${workspaceFolder}\\test.py\"",
+        "conda deactivate"
+      ],
+      "presentation": {
+        "reveal": "never"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "python",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
+    },
+    {
+      "label": "Run with pypy3",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "copy",
+        "\"${file}\"",
+        "\"${workspaceFolder}\\copy_${fileBasename}\"",
+        "&&",
+        "pypy3",
+        "\"${workspaceFolder}\\copy_${fileBasename}\"",
+        "<",
+        "\"${workspaceFolder}\\input.txt\"",
+        ">",
+        "\"${workspaceFolder}\\output.txt\"",
+        "&&",
+        "del",
+        "\"${workspaceFolder}\\copy_${fileBasename}\""
+      ],
+      "presentation": {
+        "reveal": "always"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "python",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
+    }
+  ]
+}
