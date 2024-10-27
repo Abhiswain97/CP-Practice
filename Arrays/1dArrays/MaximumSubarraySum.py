@@ -45,10 +45,21 @@ stdout.write(f"Max sum (cumulative-sum) is: {str(max_sum)}\n")
 
 # Kadane's Algorithm
 max_sum, curr_sum = -maxsize - 1, 0
-for e in arr:
+start = 0
+end = 0
+for idx, e in enumerate(arr):
+
+    if curr_sum == 0:
+        start = idx
+
     curr_sum += e
+
     if curr_sum < 0:
         curr_sum = 0
+        ans_start = start
+        end = idx
+
     max_sum = max(curr_sum, max_sum)
 
+print([arr[l] for l in range(ans_start, end)])
 stdout.write(f"Max sum (Kadane's Algo) is: {str(max_sum)}\n")

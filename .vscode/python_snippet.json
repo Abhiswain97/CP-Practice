@@ -1,0 +1,67 @@
+{
+  "Fast I/O": {
+    "body": [
+      "",
+      "# Author: Abhishek Swain",
+      "# Mail: abhi08as.as@gmail.com",
+      "# Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
+      "",
+      "from io import BytesIO",
+      "from os import read, fstat",
+      "from sys import stdout",
+      "",
+      "fast_input = BytesIO(read(0, fstat(0).st_size)).readline"
+    ],
+    "description": "Python template to take fast input"
+  },
+  "Fast I/O with List": {
+    "body": [
+      "",
+      "# Author: Abhishek Swain",
+      "# Mail: abhi08as.as@gmail.com",
+      "# Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
+      "",
+      "from io import BytesIO",
+      "from os import read, fstat",
+      "from sys import stdout",
+      "",
+      "fast_input = BytesIO(read(0, fstat(0).st_size)).readline",
+      "",
+      "n = int(fast_input().decode())",
+      "",
+      "# Take input for newline separated integers",
+      "arr = [int(fast_input().decode()) for _ in range(n)]",
+      "",
+      "# Take input for space separated integers",
+      "arr = list(map(int, fast_input().split()))"
+    ],
+    "description": "Python template to take fast input with lists"
+  },
+  "Fast I/O with 2D_List": {
+    "body": [
+      "",
+      "# Author: Abhishek Swain",
+      "# Mail: abhi08as.as@gmail.com",
+      "# Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
+      "",
+      "from io import BytesIO",
+      "from os import read, fstat",
+      "from sys import stdout",
+      "",
+      "fast_input = BytesIO(read(0, fstat(0).st_size)).readline",
+      "",
+      "mRows = int(fast_input().decode())",
+      "nCols = int(fast_input().decode())",
+      "",
+      "# Take input for newline separated integers",
+      "matrix = [[int(fast_input().decode()) for _ in range(mCols)] for _ in range(mRows)]",
+      "",
+      "# Take input for space separated integers",
+      "matrix = []",
+      "for _ in range(mRows):",
+      "    row = list(map(int, fast_input().decode().split()))",
+      "    matrix.append(row)"
+    ],
+    "description": "Python template to take fast input with 2d lists"
+  }
+}
