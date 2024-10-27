@@ -1,2 +1,3 @@
-Max sum is: 10
-1 3 -2 6 2
+Max sum (brute-force) is: 10
+Max sum (cumulative-sum) is: 10
+Max sum (Kadane's Algo) is: 10
