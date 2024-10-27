@@ -26,7 +26,9 @@ for _ in range(mRows):
 
 res = []
 while matrix:
-    print(*matrix)
+    # print(*matrix)
     res += matrix.pop(0)
     # print(res)
     matrix = list(zip(*matrix))[::-1]
+
+stdout.write(" ".join([str(r) for r in res]))
